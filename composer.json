@@ -1,0 +1,43 @@
+{
+    "name": "laravel-enso/sentry",
+    "description": "Main requirement & dependency aggregator for Laravel Enso",
+    "keywords": [
+        "laravel-enso",
+        "sentry",
+        "vue-bulma",
+        "vue-spa"
+    ],
+    "homepage": "https://github.com/laravel-enso/Sentry",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Adrian Ocneanu",
+            "email": "aocneanu@gmail.com",
+            "homepage": "https://laravel-enso.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Vlad Chiovianu",
+            "email": "vlad.chiovianu@earthlink.ro",
+            "homepage": "https://laravel-enso.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=8.0",
+        "laravel/framework": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "LaravelEnso\\Sentry\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LaravelEnso\\Sentry\\AppServiceProvider"
+            ]
+        }
+    }
+}
