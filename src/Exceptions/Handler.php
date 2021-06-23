@@ -10,7 +10,7 @@ use Illuminate\Support\Str;
 use RedisException;
 use Throwable;
 
-class Sentry
+class Handler
 {
     private const Key = 'sentry-events';
 
