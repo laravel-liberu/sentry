@@ -6,13 +6,15 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Str;
 use RedisException;
 use Throwable;
 
 class Handler
 {
-    private const Key = 'sentry-events';
+    private const UserEventKey = 'sentry-events';
+    private const RecentEventsPrefix = 'recents-exceptions:';
 
     public static function report(Throwable $exception): void
     {
@@ -33,7 +35,7 @@ class Handler
 
     public static function eventId(): ?string
     {
-        $events = Cache::get(self::Key);
+        $events = Cache::get(self::UserEventKey);
         $eventId = $events[Auth::user()->id] ?? null;
 
         return $eventId;
@@ -41,10 +43,10 @@ class Handler
 
     private static function storeEventId(): void
     {
-        $events = Cache::get(self::Key, []);
+        $events = Cache::get(self::UserEventKey, []);
         $events[Auth::user()->id] = App::make('sentry')->getLastEventId();
 
-        Cache::forever(self::Key, $events);
+        Cache::forever(self::UserEventKey, $events);
     }
 
     private static function addContext(): void
@@ -59,6 +61,7 @@ class Handler
     private static function shouldSkip(Throwable $exception): bool
     {
         $key = Str::of($exception::class)->snake()->slug()
+            ->prepend(self::RecentEventsPrefix)
             ->append(':', Str::of($exception->getMessage())->snake()->slug())
             ->__toString();
 
@@ -70,7 +73,8 @@ class Handler
             return true;
         }
 
-        $cache->put($key, true, Carbon::now()->addMinutes(5));
+        $interval = Config::get('enso.sentry.dedupeInterval');
+        $cache->put($key, true, Carbon::now()->addMinutes($interval));
 
         return false;
     }
