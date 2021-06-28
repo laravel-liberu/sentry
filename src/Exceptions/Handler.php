@@ -14,7 +14,7 @@ use Throwable;
 class Handler
 {
     private const UserEventKey = 'sentry-events';
-    private const RecentEventsPrefix = 'recents-exceptions:';
+    private const RecentEventsPrefix = 'recent-exceptions:';
 
     public static function report(Throwable $exception): void
     {
