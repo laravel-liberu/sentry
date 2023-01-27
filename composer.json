@@ -1,26 +1,26 @@
 {
-    "name": "laravel-enso/sentry",
+    "name": "cgdsoftware/sentry",
     "description": "Main requirement & dependency aggregator for Laravel Enso",
     "keywords": [
-        "laravel-enso",
+        "cgdsoftware",
         "sentry",
         "vue-bulma",
         "vue-spa"
     ],
-    "homepage": "https://github.com/laravel-enso/Sentry",
+    "homepage": "https://github.com/cgdsoftware/Sentry",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
             "name": "Adrian Ocneanu",
             "email": "aocneanu@gmail.com",
-            "homepage": "https://laravel-enso.com",
+            "homepage": "https://cgdsoftware.com",
             "role": "Developer"
         },
         {
             "name": "Vlad Chiovianu",
             "email": "vlad.chiovianu@earthlink.ro",
-            "homepage": "https://laravel-enso.com",
+            "homepage": "https://cgdsoftware.com",
             "role": "Developer"
         }
     ],
