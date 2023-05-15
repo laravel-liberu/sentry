@@ -1,3 +1,3 @@
 # Sentry
 
-Sentry exception handling for Laravel Enso
+Sentry exception handling for Laravel Liberu
