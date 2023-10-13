@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use LaravelEnso\Sentry\Http\Controllers\Sentry;
+use LaravelLiberu\Sentry\Http\Controllers\Sentry;
 
 Route::prefix('api')
     ->middleware(['api', 'auth'])

@@ -1,6 +1,6 @@
 <?php
 
-namespace LaravelEnso\Sentry;
+namespace LaravelLiberu\Sentry;
 
 use Illuminate\Support\ServiceProvider;
 

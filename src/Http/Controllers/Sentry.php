@@ -1,9 +1,9 @@
 <?php
 
-namespace LaravelEnso\Sentry\Http\Controllers;
+namespace LaravelLiberu\Sentry\Http\Controllers;
 
 use Illuminate\Routing\Controller;
-use LaravelEnso\Sentry\Exceptions\Handler;
+use LaravelLiberu\Sentry\Exceptions\Handler;
 
 class Sentry extends Controller
 {

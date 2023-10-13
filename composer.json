@@ -30,13 +30,13 @@
     },
     "autoload": {
         "psr-4": {
-            "LaravelEnso\\Sentry\\": "src/"
+            "LaravelLiberu\\Sentry\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "LaravelEnso\\Sentry\\AppServiceProvider"
+                "LaravelLiberu\\Sentry\\AppServiceProvider"
             ]
         }
     },

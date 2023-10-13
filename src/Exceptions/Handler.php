@@ -1,6 +1,6 @@
 <?php
 
-namespace LaravelEnso\Sentry\Exceptions;
+namespace LaravelLiberu\Sentry\Exceptions;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\App;
