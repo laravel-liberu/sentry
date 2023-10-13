@@ -73,7 +73,7 @@ class Handler
             return true;
         }
 
-        $interval = Config::get('enso.sentry.dedupeInterval');
+        $interval = Config::get('liberu.sentry.dedupeInterval');
         $cache->put($key, true, Carbon::now()->addMinutes($interval));
 
         return false;

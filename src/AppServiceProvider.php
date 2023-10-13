@@ -15,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
     private function load(): self
     {
         $this->loadRoutesFrom(__DIR__.'/../routes/api.php');
-        $this->mergeConfigFrom(__DIR__.'/../config/sentry.php', 'enso.sentry');
+        $this->mergeConfigFrom(__DIR__.'/../config/sentry.php', 'liberu.sentry');
 
         return $this;
     }
@@ -23,7 +23,7 @@ class AppServiceProvider extends ServiceProvider
     private function publish()
     {
         $this->publishes([
-            __DIR__.'/../config' => config_path('enso'),
-        ], ['enso-sentry-config', 'enso-config']);
+            __DIR__.'/../config' => config_path('liberu'),
+        ], ['liberu-sentry-config', 'liberu-config']);
     }
 }
